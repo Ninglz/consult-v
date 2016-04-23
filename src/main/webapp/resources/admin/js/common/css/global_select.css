@@ -1,0 +1,14 @@
+﻿@charset "utf-8";
+.mr5{ margin-right:5px;}
+.mr15{ margin-right:15px;}
+.fl{ float:left;}
+.fr{ float:right;}
+.over_hi{ overflow:hidden;}
+.font_wei{ font-family:"微软雅黑";}
+.color_66{ color:#666;}
+.position_re{ position:relative;}
+.vert_mid{ vertical-align:middle;}
+.selecttxt{ display:inline-block; min-width:75px; height:18px; padding:5px; background:#fff; border-radius:2px; line-height:18px; border:1px solid #ccd0d2;}
+.selecttxt i{ margin-right:5px;}
+.sort_ul{ position:absolute; top:30px; left:-1px; z-index:1; display:none; width:100%;  overflow-y:auto;}
+.sort_ul li{ line-height:28px; background:#fff; padding-left:5px;text-align: left;}

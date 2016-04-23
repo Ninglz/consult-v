@@ -1,0 +1,11 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*-----------------------RESET----------------------*/
+body{ background:#333843;}
+.color_eb{ color:#eb4949;}
+.color_33{ color:#333;}
+.warpper{ width:440px; margin:0 auto; padding-top:155px;}
+table tr td{ line-height:70px;}
+.input_txt{ width:350px; height:45px; border:0; padding:0 5px; vertical-align:middle;}
+.w227{ width:217px;}
+.login_btn{ display:inline-block; background:#00addf; text-align:center; line-height:45px;}

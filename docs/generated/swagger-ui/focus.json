@@ -1,0 +1,123 @@
+{
+  "apiVersion" : "1.0",
+  "swaggerVersion" : "1.2",
+  "basePath" : "http://192.168.168.88:8080/api",
+  "resourcePath" : "/focus",
+  "apis" : [ {
+    "path" : "/focus/update",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "Focus",
+      "notes" : "",
+      "type" : "StatusResponse",
+      "nickname" : "focus",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      }, {
+        "name" : "expertsId",
+        "description" : "Experts ID",
+        "required" : true,
+        "type" : "integer",
+        "format" : "int64",
+        "paramType" : "query",
+        "allowMultiple" : false
+      }, {
+        "name" : "active",
+        "description" : "true:关注 || false:取消关注",
+        "required" : true,
+        "type" : "boolean",
+        "paramType" : "query",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40009,
+        "message" : "Token Invalid",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/focus/list",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "Focus list",
+      "notes" : "",
+      "type" : "StatusResponse",
+      "nickname" : "list",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      }, {
+        "name" : "name",
+        "description" : "专家姓名，用于搜索",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "industryId",
+        "description" : "行业id",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "evaluation : asc || desc",
+        "description" : "评分排序",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "price: asc || desc",
+        "description" : "资费排序",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "page",
+        "required" : true,
+        "type" : "integer",
+        "format" : "int32",
+        "paramType" : "query",
+        "allowMultiple" : false
+      }, {
+        "name" : "size",
+        "required" : true,
+        "type" : "integer",
+        "format" : "int32",
+        "paramType" : "query",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40009,
+        "message" : "Token Invalid",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  } ],
+  "models" : {
+    "StatusResponse" : {
+      "id" : "StatusResponse",
+      "required" : [ "c" ],
+      "properties" : {
+        "m" : {
+          "$ref" : "JSON Object",
+          "description" : "Message Body, {'c': 0, 'm': {${response}}}"
+        },
+        "c" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Status Code, {'c': 0, 'm': {${response}}}"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*-----------------------RESET----------------------*/
+i,em{ font-style:normal;}
+body{ font-family:"微软雅黑",Tahoma, Geneva, sans-serif; color:#555; }
+a{ color:#555;}
+img,.vert_mid{ vertical-align:middle;}
+textarea{ resize: none; }
+ /*-0723改动-*/
+.over_hide{ overflow:hidden;}
+.vert_base{ vertical-align:baseline;}
+.vert_sub{ vertical-align:sub;}
+.position_re{ position:relative;}
+.wapper{ width:100%; background:#f5f5f5;}
+/*--新增加的设置0717--*/
+.main{ width:1200px; margin:0 auto; position:relative;}
+/*--新增加的设置0717 -end--*/
+.bg_fa{ background:#fafafa;}
+.bg_f0{ background:#f0f0f0;}
+.bg_f5{ background:#f5f5f5;}
+.bg_ff{ background:#fff;}
+.color_4fd{ color: #4fd2c2; }
+.color_979{ color: #979797; }
+.color_66{ color: #666; }
+.lh24{ line-height:24px;}
+.lh28{ line-height:28px;}
+.lh30{ line-height:30px;}
+.lh40{ line-height:40px;}
+.border_shadow_b{ border-bottom:1px solid #d9d9d9; box-shadow:1px 1px 2px #f2f2f2;}
+/*--头部--*/
+.header{ height: 90px; line-height: 90px; background: #fff; box-shadow: 0 1px 1px #e3e3e3; }
+.nav li{ float:left; width:112px; text-align:center;}
+.nav li a{ display:block; width:100%; height:100%; font-size: 14px;}
+.nav li a.current{ background: url(../img/nav_hover_bg.jpg) no-repeat center bottom; color:#4fd2c2;}
+.nav_mobile_tip,.logo_mobile,.nav_close{ display: none; }
+.header_search{ width: 190px; height: 40px; margin-left: 30px; line-height: 40px; background: #ebebeb; border-radius: 20px; margin-top: 25px; }
+.header_search input{ width: 135px; margin-left: 20px; background: #ebebeb; }
+.header_search a{ display: inline-block; width:19px; height: 19px; vertical-align: middle; background: url(../img/search_btn.png) no-repeat center center;  }
+/*--登录信息--*/
+.hearder_login{ margin-left: 90px; }
+.user_info{ display: none; width: 240px; padding: 15px; line-height: 24px; background: #7bddd1; position: absolute; top: 90px; right: 0; border-radius: 0 0 5px 5px; box-shadow: 0px 2px 2px #e5e5e5; z-index: 5;}
+.user_para1{ border-bottom: 1px solid #fff; padding-bottom: 10px; margin-bottom: 10px; }
+.head_img{ width: 30px; height: 30px; border-radius: 50%; }
+.user_sex{ display: inline-block; width: 17px; height: 17px; background: url(../img/user_sex.png) no-repeat center center; vertical-align: middle; margin-left: 5px; }
+.user_to_export{ display: inline-block; width: 82px; height: 30px; background: #fff; color: #7bddd1; font-size: 14px; text-align: center; line-height: 30px; border-radius: 3px; }
+/*--底部--*/
+.app_banner{ background: #48cfc9; height: 68px; line-height: 68px; }
+.app_banner .main{ height: 68px; background:url(../img/app_banner_bg.jpg) no-repeat center top; }
+.app_down_a{ display: block; width: 116px; height: 36px; text-align: center; line-height: 36px; background: url(../img/app_banner_btn_bg.png) repeat; border-radius: 5px; border:1px solid #fff; font-size: 14px; margin-top: 15px; }
+.footer{ background: #202020; padding: 40px 0; }
+.ml270{ margin-left: 270px; }
+.wechat_span{ display: inline-block; width: 65px; height: 86px; padding: 7px; background: #fff; border-radius: 5px; text-align: center; }
+
+@media screen and (max-width: 1366px) {
+	
+}
+/*--新增加的设置0717--*/
+@media screen and (max-width: 1279px) {
+	.main{ width:1000px;}
+	/*--头部--*/
+	.header{ height: 70px; line-height: 70px; }
+	.header_right{ width: 80%; }
+	.logo_a{ width: 12%; }
+	.nav{ width: 60%;}
+	.nav li{ width: 20%;}
+	.header_search{ margin-top: 15px; margin-left: 10px; }
+	.hearder_login{ margin-left: 20px; }
+  }
+@media screen and (max-width: 1000px) {
+    .main{ width:94%;}
+	.header{ height: 50px; line-height: 50px; }
+	.logo_a{ width: 20%; }
+	.header_right{ float: right; width: auto; }
+	.nav{ width: 150px; height: 100%; position: fixed; right: -150px; top: 0; z-index: 5; background: #4fd2c2;  }
+	
+	.nav li{ float: none; width: 100%; height: 40px; line-height: 40px; margin-top:20px; }
+	.nav li a{ color: #fff; width: 80%; margin-left: 10%; }
+	.nav li a.current{ background: #eefaf9; color:#55d0c1; border-radius: 5px;}
+	.nav_mobile_tip{ display: block; line-height: 45px; }
+	.logo_mobile{ display: block; width: 100%; position: absolute; left: 0; bottom: 40px; }
+	.nav_close{ display: block; padding-right: 10px; font-size: 30px; }
+	.header_search{ background:none; width:19px; height:19px; margin-top: 5px; }
+	.header_search input{ display: none; }
+	.user_info{ top: 50px; }
+	.app_txt{ width: 60%; }
+	.app_down_a{ width: 30%; }
+	.footer{ padding: 20px 0; }
+	.footer .main .ml270,.footer .main .nav_f{ display: none; }
+  }

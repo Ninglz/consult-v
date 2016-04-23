@@ -1,0 +1,50 @@
+{
+  "apiVersion" : "1.0",
+  "swaggerVersion" : "1.2",
+  "apis" : [ {
+    "path" : "/code.{format}",
+    "description" : "Code APIs"
+  }, {
+    "path" : "/system.{format}",
+    "description" : "System Cfg APIs"
+  }, {
+    "path" : "/insecure.{format}",
+    "description" : "Insecure APIs"
+  }, {
+    "path" : "/consumer.{format}",
+    "description" : "Consumer APIs"
+  }, {
+    "path" : "/experts.{format}",
+    "description" : "Experts APIs"
+  }, {
+    "path" : "/news.{format}",
+    "description" : "News APIs"
+  }, {
+    "path" : "/focus.{format}",
+    "description" : "Focus APIs"
+  }, {
+    "path" : "/comment.{format}",
+    "description" : "Comment APIs"
+  }, {
+    "path" : "/activity.{format}",
+    "description" : "Activity APIs"
+  }, {
+    "path" : "/consult.{format}",
+    "description" : "Consult APIs"
+  }, {
+    "path" : "/trading.{format}",
+    "description" : "Trading APIs"
+  }, {
+    "path" : "/index.{format}",
+    "description" : "Index APIs"
+  } ],
+  "info" : {
+    "title" : "RESTful API v1",
+    "description" : "safeguard RESTful API",
+    "termsOfServiceUrl" : "http://www.github.com/kongchen/swagger-maven-plugin",
+    "contact" : "ry.wang@dsecet.com",
+    "license" : "Apache 2.0",
+    "licenseUrl" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+  },
+  "basePath" : "http://www.safeguard.com/api"
+}

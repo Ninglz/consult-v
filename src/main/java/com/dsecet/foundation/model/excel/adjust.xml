@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbook>
+   <worksheet name="Sheet1">
+        <section startRow="0" endRow="0"/>
+        <section startRow="1" endRow="1"/>
+        <loop startRow="2" endRow="2" items="result" var="adjustRecordExcelVo" varType="com.dsecet.foundation.model.excel.AdjustRecordExcelVo">
+            <section startRow="2" endRow="2">
+                <mapping row="2" col="0">adjustRecordExcelVo.adjustDate</mapping>
+                <mapping row="2" col="1">adjustRecordExcelVo.voltageFirstMin</mapping>
+                <mapping row="2" col="2">adjustRecordExcelVo.voltageFirstMax</mapping>
+                <mapping row="2" col="3">adjustRecordExcelVo.voltageSecondMin</mapping>
+                <mapping row="2" col="4">adjustRecordExcelVo.voltageSecondMax</mapping>
+                <mapping row="2" col="5">adjustRecordExcelVo.voltageThirdMin</mapping>
+                <mapping row="2" col="6">adjustRecordExcelVo.voltageThirdMax</mapping>
+                <mapping row="2" col="7">adjustRecordExcelVo.voltageFourthMin</mapping>
+                <mapping row="2" col="8">adjustRecordExcelVo.voltageFourthMax</mapping>
+                <mapping row="2" col="9">adjustRecordExcelVo.mac</mapping>
+                <mapping row="2" col="10">adjustRecordExcelVo.batch</mapping>
+            </section>
+            <loopbreakcondition>
+                <rowcheck offset="0">
+                    <cellcheck offset="0"/>
+                </rowcheck>
+            </loopbreakcondition>
+        </loop>
+    </worksheet>
+</workbook>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>平台管理-专家管理</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+</head>
+
+<body style=" background: #000;">
+ <div style="text-align: center;"><img src="../images/export/exportcenter.jpg" width="420" border="0" usemap="#Map" />
+   <map name="Map">
+     <area shape="rect" coords="18,620,404,668" href="../login.html">
+     <area shape="rect" coords="13,210,407,253" href="bindpay.html">
+     <area shape="rect" coords="14,260,407,301" href="exchange.html">
+     <area shape="rect" coords="14,310,408,355" href="postage.html">
+     <area shape="rect" coords="352,536,408,570" href="javascript:" onClick="goconsult()">
+<area shape="rect" coords="13,417,407,468" href="../resetphone1.html">
+     <area shape="rect" coords="14,473,407,519" href="../resetpwd1.html">
+     <area shape="rect" coords="372,30,411,65" href="modifyinfo.html">
+   </map>
+ </div>
+ <script>
+    function goconsult(){
+		var i = 1;
+		mytimer = setInterval(function () {
+			if (i > 0) {
+				i--;
+			} else {
+				window.clearInterval(mytimer);
+				window.location.href="preconsult.html";
+			}
+		}, 1000);
+		}
+    
+
+</script>
+</body>
+</html>

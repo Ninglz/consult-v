@@ -1,0 +1,1188 @@
+{
+  "apiVersion" : "1.0",
+  "swaggerVersion" : "1.2",
+  "basePath" : "http://192.168.168.88:8080/api",
+  "resourcePath" : "/experts",
+  "apis" : [ {
+    "path" : "/experts/save",
+    "operations" : [ {
+      "method" : "POST",
+      "summary" : "Save Experts",
+      "notes" : "",
+      "type" : "array",
+      "items" : {
+        "$ref" : "Experts"
+      },
+      "nickname" : "saveExpertsInformation",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      }, {
+        "name" : "name",
+        "description" : "姓名",
+        "required" : true,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "sex",
+        "description" : "性别",
+        "required" : false,
+        "type" : "integer",
+        "format" : "int64",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "idCard",
+        "description" : "身份证号码",
+        "required" : true,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "avatar",
+        "description" : "头像",
+        "required" : true,
+        "type" : "MultipartFile",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "seniorityStart",
+        "description" : "资历时间起",
+        "required" : true,
+        "type" : "string",
+        "format" : "date-time",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "seniorityEnd",
+        "description" : "资历时间至",
+        "required" : false,
+        "type" : "string",
+        "format" : "date-time",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "industryId",
+        "description" : "行业ID",
+        "required" : true,
+        "type" : "integer",
+        "format" : "int64",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "cityId",
+        "description" : "城市ID",
+        "required" : true,
+        "type" : "integer",
+        "format" : "int64",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "goodAt",
+        "description" : "擅长",
+        "required" : true,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "description",
+        "description" : "说明",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "alipayUserName",
+        "description" : "支付宝账号",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "certificateImg",
+        "description" : "资历证书",
+        "required" : false,
+        "type" : "array",
+        "items" : {
+          "$ref" : "MultipartFile"
+        },
+        "paramType" : "form",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 10035,
+        "message" : "IdCard Empty",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10006,
+        "message" : "CellNo empty",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10036,
+        "message" : "Seniority Empty",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10037,
+        "message" : "Industry Empty",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10038,
+        "message" : "Goodat Empty",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10039,
+        "message" : "Description Empty",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/experts/list",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "Experts list",
+      "notes" : "",
+      "type" : "StatusResponse",
+      "nickname" : "list",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      }, {
+        "name" : "name",
+        "description" : "专家姓名，用于搜索",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "industryId",
+        "description" : "行业id",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "evaluation : asc || desc",
+        "description" : "评分排序",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "price: asc || desc",
+        "description" : "资费排序",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "page",
+        "required" : true,
+        "type" : "integer",
+        "format" : "int32",
+        "paramType" : "query",
+        "allowMultiple" : false
+      }, {
+        "name" : "size",
+        "required" : true,
+        "type" : "integer",
+        "format" : "int32",
+        "paramType" : "query",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40009,
+        "message" : "Token Invalid",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/experts/recommend",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "Experts recommend",
+      "notes" : "",
+      "type" : "StatusResponse",
+      "nickname" : "list",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      }, {
+        "name" : "size",
+        "required" : true,
+        "type" : "integer",
+        "format" : "int32",
+        "paramType" : "query",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40009,
+        "message" : "Token Invalid",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/experts/judge",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "Judge Experts Sign In",
+      "notes" : "",
+      "type" : "SessionToken",
+      "nickname" : "judgeSingin",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 65520,
+        "message" : "Request Entity Blank",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/experts/detail",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "Experts Detail",
+      "notes" : "",
+      "type" : "array",
+      "items" : {
+        "$ref" : "Consumer"
+      },
+      "nickname" : "getExperts",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : true,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40009,
+        "message" : "token invalid",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/experts/update",
+    "operations" : [ {
+      "method" : "POST",
+      "summary" : "Update Experts",
+      "notes" : "",
+      "type" : "array",
+      "items" : {
+        "$ref" : "Experts"
+      },
+      "nickname" : "updateExpertsInformation",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      }, {
+        "name" : "name",
+        "description" : "姓名",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "sex",
+        "description" : "性别",
+        "required" : false,
+        "type" : "integer",
+        "format" : "int64",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "idCard",
+        "description" : "身份证号码",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "avatar",
+        "description" : "头像",
+        "required" : false,
+        "type" : "MultipartFile",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "seniorityStart",
+        "description" : "资历时间起",
+        "required" : false,
+        "type" : "string",
+        "format" : "date-time",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "seniorityEnd",
+        "description" : "资历时间止",
+        "required" : false,
+        "type" : "string",
+        "format" : "date-time",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "industryId",
+        "description" : "行业ID",
+        "required" : false,
+        "type" : "integer",
+        "format" : "int64",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "cityId",
+        "description" : "城市ID",
+        "required" : false,
+        "type" : "integer",
+        "format" : "int64",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "goodAt",
+        "description" : "擅长",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "description",
+        "description" : "说明",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "alipayUserName",
+        "description" : "支付宝账号",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "certificateImg",
+        "description" : "资历证书",
+        "required" : false,
+        "type" : "array",
+        "items" : {
+          "$ref" : "MultipartFile"
+        },
+        "paramType" : "form",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 10035,
+        "message" : "IdCard Empty",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10006,
+        "message" : "CellNo empty",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10036,
+        "message" : "Seniority Empty",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10037,
+        "message" : "Industry Empty",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10038,
+        "message" : "Goodat Empty",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10039,
+        "message" : "Description Empty",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/experts/update/state",
+    "operations" : [ {
+      "method" : "POST",
+      "summary" : "Update Experts State",
+      "notes" : "",
+      "type" : "array",
+      "items" : {
+        "$ref" : "Experts"
+      },
+      "nickname" : "updateExpertsState",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      } ]
+    } ]
+  }, {
+    "path" : "/experts/update/active",
+    "operations" : [ {
+      "method" : "POST",
+      "summary" : "Update Experts Active",
+      "notes" : "",
+      "type" : "array",
+      "items" : {
+        "$ref" : "Experts"
+      },
+      "nickname" : "updateExpertsLastActive",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      } ]
+    } ]
+  }, {
+    "path" : "/experts/judge/update",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "Judge Experts Update Information",
+      "notes" : "",
+      "type" : "SessionToken",
+      "nickname" : "judgeUpdate",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 65520,
+        "message" : "Request Entity Blank",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/experts/alipay",
+    "operations" : [ {
+      "method" : "POST",
+      "summary" : "Experts Update Alipay",
+      "notes" : "",
+      "type" : "SessionToken",
+      "nickname" : "alipay",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      }, {
+        "name" : "body",
+        "required" : true,
+        "type" : "AlipayRequest",
+        "paramType" : "body",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 65520,
+        "message" : "Request Entity Blank",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/experts/show",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "Experts Show",
+      "notes" : "",
+      "type" : "array",
+      "items" : {
+        "$ref" : "Consumer"
+      },
+      "nickname" : "expertsShow",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : true,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      }, {
+        "name" : "expertsId",
+        "description" : "专家ID",
+        "required" : true,
+        "type" : "integer",
+        "format" : "int64",
+        "paramType" : "form",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40009,
+        "message" : "token invalid",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  } ],
+  "models" : {
+    "Authentication" : {
+      "id" : "Authentication",
+      "properties" : {
+        "email" : {
+          "$ref" : "AuthItem"
+        },
+        "real_name" : {
+          "$ref" : "AuthItem"
+        },
+        "nick_name" : {
+          "$ref" : "AuthItem"
+        },
+        "id_card" : {
+          "$ref" : "AuthItem"
+        },
+        "cell" : {
+          "$ref" : "AuthItem"
+        }
+      }
+    },
+    "MultipartFile" : {
+      "id" : "MultipartFile",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "bytes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "byte"
+          }
+        },
+        "empty" : {
+          "type" : "boolean"
+        },
+        "size" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "inputStream" : {
+          "$ref" : "InputStream"
+        },
+        "contentType" : {
+          "type" : "string"
+        },
+        "originalFilename" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Levels" : {
+      "id" : "Levels",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "levels" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "consumerProportion" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "expertsProportion" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      }
+    },
+    "AlipayRequest" : {
+      "id" : "AlipayRequest",
+      "description" : "",
+      "required" : [ "alipayUserName" ],
+      "properties" : {
+        "alipayUserName" : {
+          "type" : "string",
+          "description" : "alipayUserName"
+        }
+      }
+    },
+    "Consumer" : {
+      "id" : "Consumer",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "weight" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "sex" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "height" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "age" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "times" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "address" : {
+          "type" : "string"
+        },
+        "clientNum" : {
+          "type" : "string"
+        },
+        "clientPwd" : {
+          "type" : "string"
+        },
+        "city" : {
+          "$ref" : "City"
+        },
+        "authentication" : {
+          "$ref" : "Authentication"
+        },
+        "consumerDetails" : {
+          "$ref" : "ConsumerDetails"
+        },
+        "pushs" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Pushs"
+          }
+        },
+        "avatar" : {
+          "type" : "string"
+        },
+        "realName" : {
+          "type" : "string"
+        },
+        "nickName" : {
+          "type" : "string"
+        },
+        "idCard" : {
+          "type" : "string"
+        },
+        "experLevel" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "appType" : {
+          "$ref" : "AppType",
+          "enum" : [ "ANDROID", "IOS", "PC" ]
+        },
+        "integral" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "consumerLevel" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sink" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "appToken" : {
+          "type" : "string"
+        },
+        "cellNo" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "expertsValidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "consumerInvalidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "expertsInvalidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "consumerValidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "u" : {
+          "type" : "string",
+          "description" : "Username"
+        },
+        "imgUrl" : {
+          "type" : "string"
+        }
+      }
+    },
+    "SessionToken" : {
+      "id" : "SessionToken",
+      "required" : [ "t" ],
+      "properties" : {
+        "t" : {
+          "type" : "string",
+          "description" : "Token"
+        },
+        "num" : {
+          "type" : "string"
+        },
+        "pwd" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Industry" : {
+      "id" : "Industry",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "consumer_proportion" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "experts_proportion" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      }
+    },
+    "Img" : {
+      "id" : "Img",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "path" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ExpertsRecord" : {
+      "id" : "ExpertsRecord",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "state" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "price" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "seniorityStart" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "seniorityEnd" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "goodAt" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "industry" : {
+          "$ref" : "Industry"
+        },
+        "img" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Img"
+          }
+        },
+        "auditState" : {
+          "type" : "boolean"
+        },
+        "reason" : {
+          "type" : "string"
+        },
+        "expertsAvatar" : {
+          "type" : "string"
+        },
+        "expertsSex" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "expertsRealName" : {
+          "type" : "string"
+        },
+        "experts" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Experts"
+          }
+        }
+      }
+    },
+    "City" : {
+      "id" : "City",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "consumerProportion" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "expertsProportion" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      }
+    },
+    "StatusResponse" : {
+      "id" : "StatusResponse",
+      "required" : [ "c" ],
+      "properties" : {
+        "m" : {
+          "$ref" : "JSON Object",
+          "description" : "Message Body, {'c': 0, 'm': {${response}}}"
+        },
+        "c" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Status Code, {'c': 0, 'm': {${response}}}"
+        }
+      }
+    },
+    "Date" : {
+      "id" : "Date",
+      "properties" : {
+        "hours" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "minutes" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "seconds" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "month" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "year" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "day" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "timezoneOffset" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "time" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "date" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "ConsumerDetails" : {
+      "id" : "ConsumerDetails",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "consuemrLevels" : {
+          "$ref" : "Levels"
+        },
+        "expertsLevels" : {
+          "$ref" : "Levels"
+        },
+        "consumer" : {
+          "$ref" : "Consumer"
+        },
+        "sink" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "integral" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "consumerTotal" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "consumerNum" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "expertsTotal" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "expertsNum" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "rechargePrice" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "cashPrice" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "consumerInvalidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "consumerValidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "expertsInvalidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "expertsValidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
+    "Pushs" : {
+      "id" : "Pushs",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "content" : {
+          "type" : "string"
+        },
+        "consumer" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Consumer"
+          }
+        },
+        "shortContent" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Experts" : {
+      "id" : "Experts",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "state" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "focusNo" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "top" : {
+          "type" : "boolean"
+        },
+        "topTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "handle" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "lastActive" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "alipayUserName" : {
+          "type" : "string"
+        },
+        "expertsRecord" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "ExpertsRecord"
+          }
+        },
+        "address" : {
+          "type" : "string"
+        },
+        "realName" : {
+          "type" : "string"
+        },
+        "authentication" : {
+          "$ref" : "Authentication"
+        },
+        "weight" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "nickName" : {
+          "type" : "string"
+        },
+        "idCard" : {
+          "type" : "string"
+        },
+        "experLevel" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "pushs" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Pushs"
+          }
+        },
+        "appType" : {
+          "$ref" : "AppType",
+          "enum" : [ "ANDROID", "IOS", "PC" ]
+        },
+        "integral" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "avatar" : {
+          "type" : "string"
+        },
+        "clientNum" : {
+          "type" : "string"
+        },
+        "city" : {
+          "$ref" : "City"
+        },
+        "sex" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "clientPwd" : {
+          "type" : "string"
+        },
+        "times" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "consumerLevel" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "height" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "age" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sink" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "appToken" : {
+          "type" : "string"
+        },
+        "cellNo" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "expertsValidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "consumerInvalidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "expertsInvalidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "consumerDetails" : {
+          "$ref" : "ConsumerDetails"
+        },
+        "consumerValidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "u" : {
+          "type" : "string",
+          "description" : "Username"
+        },
+        "imgUrl" : {
+          "type" : "string"
+        }
+      }
+    },
+    "AuthItem" : {
+      "id" : "AuthItem",
+      "properties" : {
+        "data" : {
+          "type" : "string"
+        },
+        "is_auth" : {
+          "type" : "boolean"
+        }
+      }
+    }
+  }
+}

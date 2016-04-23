@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>平台管理-新闻管理</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/sys.css" rel="stylesheet" type="text/css" />
+   <style>#container{ width: 800px;}</style>
+<link href="js/umeditor1_2_2-utf8-jsp/themes/default/css/umeditor.min.css" type="text/css" rel="stylesheet">
+   <script src="js/common/js/jquery-1.7.1.min.js"></script>
+   <script src="js/common/js/jquery.longyuJs.js"></script>
+   <script src="js/common/js/jquery.dialog.js"></script>
+   <script src="js/umeditor1_2_2-utf8-jsp/umeditor.config.js"></script>
+   <script src="js/umeditor1_2_2-utf8-jsp/umeditor.min.js"></script>
+</head>
+
+<body>
+<input type="hidden" name="activeMenu" id="activeMenu" value="addNews" />
+<table cellpadding="0" cellspacing="0" class="warpper">
+   <tr>
+      <td width="199" class="left text_center" valign="top">
+         <a href=""><img src="images/logo_sys.jpg" width="199" /></a>
+         <dl class="nav current">
+            <dt>用户管理<i class="ml20">-</i></dt>
+            <dd><a href="file:///D:/work/wt/sys/index.html?activeMenu=index" class="f14 color_5c">用户列表</a></dd>
+            <dd class=""><a href="file:///D:/work/wt/sys/index.html?activeMenu=consult" class="f14 color_5c">咨询事件记录列表</a></dd>
+         </dl>
+         <dl class="nav">
+            <dt>活动管理<i class="ml20">+</i></dt>
+            <dd><a href="file:///D:/work/wt/sys/activity.html?activeMenu=activity" class="f14 color_5c">活动列表</a></dd>
+            <dd><a href="file:///D:/work/wt/sys/index.html?activeMenu=addActivity" class="f14 color_5c">添加活动</a></dd>
+            <dd><a href="file:///D:/work/wt/sys/index.html" class="f14 color_5c">积分设置</a></dd>
+         </dl>
+         <dl class="nav">
+            <dt>新闻管理<i class="ml20">+</i></dt>
+            <dd><a href="file:///D:/work/wt/sys/news.html?activeMenu=news" class="f14 color_5c">新闻列表</a></dd>
+            <dd><a href="file:///D:/work/wt/sys/addNews.html?activeMenu=addNews" class="f14 color_5c">添加新闻</a></dd>
+         </dl>
+         <dl class="nav">
+            <dt>系统设置<i class="ml20">+</i></dt>
+            <dd><a href="" class="f14 color_5c">行业设置</a></dd>
+            <dd><a href="" class="f14 color_5c">系统配置</a></dd>
+            <dd><a href="" class="f14 color_5c">级别浮动比例(咨询者)</a></dd>
+            <dd><a href="" class="f14 color_5c">行业浮动比例(咨询者)</a></dd>
+            <dd><a href="" class="f14 color_5c">时间段浮动比例(咨询者)</a></dd>
+            <dd><a href="" class="f14 color_5c">专家地区浮动比例(咨询者)</a></dd>
+            <dd><a href="" class="f14 color_5c">级别浮动比例(专家)</a></dd>
+            <dd><a href="" class="f14 color_5c">行业浮动比例(专家)</a></dd>
+            <dd><a href="" class="f14 color_5c">时间段浮动比例(专家)</a></dd>
+            <dd><a href="" class="f14 color_5c">专家地区浮动比例(专家)</a></dd>
+         </dl>
+         <dl class="nav">
+            <dt>APP管理<i class="ml20">+</i></dt>
+            <dd><a href="" class="f14 color_5c">app设置</a></dd>
+         </dl>
+         <dl class="nav">
+            <dt>权限管理<i class="ml20">+</i></dt>
+            <dd><a href="" class="f14 color_5c">帐号列表</a></dd>
+            <dd><a href="" class="f14 color_5c">添加帐号</a></dd>
+         </dl>
+         <dl class="nav">
+            <dt>财务管理<i class="ml20">+</i></dt>
+            <dd><a href="" class="f14 color_5c">充值列表</a></dd>
+            <dd><a href="" class="f14 color_5c">消费列表</a></dd>
+            <dd><a href="" class="f14 color_5c">提现列表</a></dd>
+            <dd><a href="" class="f14 color_5c">系统发送积分列表</a></dd>
+         </dl>
+         <dl class="nav">
+            <dt>表报管理<i class="ml20">+</i></dt>
+            <dd><a href="" class="f14 color_5c">充值报表</a></dd>
+            <dd><a href="" class="f14 color_5c">消费报表</a></dd>
+            <dd><a href="" class="f14 color_5c">提现报表</a></dd>
+         </dl>
+      </td>
+      <td class="right" valign="top">
+         <div class="right_top clearfix">
+            <ul class="right_nav fr">
+               <li class="fl color_ff mr20">XX，欢迎登录问堂后台管理系统</li>
+               <li class="fl"><a href="" class="color_ff">修改密码</a></li>
+               <li class="fl"><a href="" class="color_ff">退出登录</a></li>
+            </ul>
+         </div>
+         <p class="main mt20"><a href="">平台管理</a> > <a href="">新闻管理</a> > 添加新闻</p>
+         <div class="main">
+            <form method="post" action="" enctype="multipart/form-data">
+               <p class="f14 color_33 mt30">标题：<input type="text" class="td_input w650" name="title" id="title" /></p>
+               <p class="f14 color_33 mt30">类型：<select class="select_m" name="type" id="type">
+                  <option value="">业务公告</option>
+                  <option value="">活动公告</option>
+                  <option value="">新闻</option>
+               </select></p>
+               <p class="f14 color_33 mt30">图片：<input type="file"name="img"  id="img" /></p>
+               <p class="f14 color_33 mt30">摘要：<textarea class="td_info w90" name="summary" id="summary"></textarea></p>
+               <div class="f14 color_33 mt30">内容：<input type="hidden" name="content" id="content">
+                  <!-- 加载编辑器的容器 -->
+                  <script id="container" name="content" type="text/plain">
+
+                  </script>
+                  <!-- 实例化编辑器 -->
+                  <script type="text/javascript">
+                     var um = UM.getEditor('container');
+                  </script>
+               </div>
+               <p class="f14 color_33 mt30"><a href="javascript:" class="del_btn color_ff f14" id="sub_btn">发布</a></p>
+            </form>
+         </div>
+
+        <div class="footer text_center">&copy;copyright 2015 问堂有限公司  版权所有</div>
+      </td>
+   </tr>
+</table>
+
+<script src="js/nav.js"></script>
+<script src="js/add_news_s.js"></script>
+<script>
+   $(function(){
+	   var cw=$(window).height();
+	   $(".warpper").css("min-height",cw-2);
+   });
+</script>
+</body>
+</html>

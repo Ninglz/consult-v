@@ -1,0 +1,45 @@
+{
+  "apiVersion" : "1.0",
+  "swaggerVersion" : "1.2",
+  "basePath" : "http://192.168.168.88:8080/api",
+  "resourcePath" : "/index",
+  "apis" : [ {
+    "path" : "/index/list",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "Index list",
+      "notes" : "",
+      "type" : "StatusResponse",
+      "nickname" : "list",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40009,
+        "message" : "Token Invalid",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  } ],
+  "models" : {
+    "StatusResponse" : {
+      "id" : "StatusResponse",
+      "required" : [ "c" ],
+      "properties" : {
+        "m" : {
+          "$ref" : "JSON Object",
+          "description" : "Message Body, {'c': 0, 'm': {${response}}}"
+        },
+        "c" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Status Code, {'c': 0, 'm': {${response}}}"
+        }
+      }
+    }
+  }
+}

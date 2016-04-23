@@ -1,0 +1,15 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*-----------------------RESET----------------------*/
+i,em{ font-style:normal;}
+body{ font-family:"微软雅黑",Tahoma, Geneva, sans-serif; color:#666;  background:#f1f3f3;}
+a{ color:#666;}
+img,.vert_mid{ vertical-align:middle;}.position_re{ position:relative;}
+.wapper{ padding: 20px; font-size: 14px;}
+.title{ margin-bottom: 10px;  font-size: 18px; color: #333; line-height: 24px;}
+.color_979{ color: #979797; }
+.times{ padding-bottom: 10px; border-bottom: 1px solid #d7d7d7; }
+.title_img{ border-top:1px solid #fcfdfd; padding-top: 15px; }
+.wapper .main{ color: #666; font-size: 14px;}
+.wapper .main img{ max-width: 100%; margin-top: 10px; }
+.wapper .main p{ line-height: 24px; margin-top: 10px; }

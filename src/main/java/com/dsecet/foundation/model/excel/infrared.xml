@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbook>
+   <worksheet name="Sheet1">
+        <section startRow="0" endRow="0"/>
+        <section startRow="1" endRow="1"/>
+        <loop startRow="2" endRow="2" items="result" var="infraredExcelVo" varType="com.dsecet.foundation.model.excel.InfraredExcelVo">
+            <section startRow="2" endRow="2">
+                <mapping row="2" col="0">infraredExcelVo.code</mapping>
+                <mapping row="2" col="1">infraredExcelVo.appliances</mapping>
+                <mapping row="2" col="2">infraredExcelVo.description</mapping>
+            </section>
+            <loopbreakcondition>
+                <rowcheck offset="0">
+                    <cellcheck offset="0"/>
+                </rowcheck>
+            </loopbreakcondition>
+        </loop>
+    </worksheet>
+</workbook>

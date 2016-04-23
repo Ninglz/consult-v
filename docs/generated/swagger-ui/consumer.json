@@ -1,0 +1,475 @@
+{
+  "apiVersion" : "1.0",
+  "swaggerVersion" : "1.2",
+  "basePath" : "http://192.168.168.88:8080/api",
+  "resourcePath" : "/consumer",
+  "apis" : [ {
+    "path" : "/consumer/edit",
+    "operations" : [ {
+      "method" : "POST",
+      "summary" : "Edit Consumer Detail Information",
+      "notes" : "",
+      "type" : "StatusResponse",
+      "nickname" : "edit",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      }, {
+        "name" : "nickName",
+        "description" : "昵称",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "sex",
+        "description" : "性别",
+        "required" : false,
+        "type" : "integer",
+        "format" : "int64",
+        "paramType" : "form",
+        "allowMultiple" : false
+      }, {
+        "name" : "avatar",
+        "description" : "头像",
+        "required" : false,
+        "type" : "MultipartFile",
+        "paramType" : "form",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 10040,
+        "message" : "Name Required",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10035,
+        "message" : "IdCard Required",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10041,
+        "message" : "Sex Required",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10042,
+        "message" : "City Required",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10043,
+        "message" : "Img Required",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/consumer/detail",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "Consumer Detail",
+      "notes" : "",
+      "type" : "array",
+      "items" : {
+        "$ref" : "Consumer"
+      },
+      "nickname" : "getConsumer",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : true,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40009,
+        "message" : "token invalid",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/consumer/update/cell",
+    "operations" : [ {
+      "method" : "POST",
+      "summary" : "Update Consumer CellNo",
+      "notes" : "",
+      "type" : "array",
+      "items" : {
+        "$ref" : "Consumer"
+      },
+      "nickname" : "updateCell",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : true,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      }, {
+        "name" : "body",
+        "required" : true,
+        "type" : "UpdateCellRequest",
+        "paramType" : "body",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40009,
+        "message" : "token invalid",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 40001,
+        "message" : "code required",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  } ],
+  "models" : {
+    "Authentication" : {
+      "id" : "Authentication",
+      "properties" : {
+        "email" : {
+          "$ref" : "AuthItem"
+        },
+        "real_name" : {
+          "$ref" : "AuthItem"
+        },
+        "nick_name" : {
+          "$ref" : "AuthItem"
+        },
+        "id_card" : {
+          "$ref" : "AuthItem"
+        },
+        "cell" : {
+          "$ref" : "AuthItem"
+        }
+      }
+    },
+    "MultipartFile" : {
+      "id" : "MultipartFile",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "bytes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "byte"
+          }
+        },
+        "empty" : {
+          "type" : "boolean"
+        },
+        "size" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "inputStream" : {
+          "$ref" : "InputStream"
+        },
+        "contentType" : {
+          "type" : "string"
+        },
+        "originalFilename" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Levels" : {
+      "id" : "Levels",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "levels" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "consumerProportion" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "expertsProportion" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      }
+    },
+    "Consumer" : {
+      "id" : "Consumer",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "weight" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "sex" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "height" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "age" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "times" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "address" : {
+          "type" : "string"
+        },
+        "clientNum" : {
+          "type" : "string"
+        },
+        "clientPwd" : {
+          "type" : "string"
+        },
+        "city" : {
+          "$ref" : "City"
+        },
+        "authentication" : {
+          "$ref" : "Authentication"
+        },
+        "consumerDetails" : {
+          "$ref" : "ConsumerDetails"
+        },
+        "pushs" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Pushs"
+          }
+        },
+        "avatar" : {
+          "type" : "string"
+        },
+        "realName" : {
+          "type" : "string"
+        },
+        "nickName" : {
+          "type" : "string"
+        },
+        "idCard" : {
+          "type" : "string"
+        },
+        "experLevel" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "appType" : {
+          "$ref" : "AppType",
+          "enum" : [ "ANDROID", "IOS", "PC" ]
+        },
+        "integral" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "consumerLevel" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sink" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "appToken" : {
+          "type" : "string"
+        },
+        "cellNo" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "expertsValidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "consumerInvalidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "expertsInvalidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "consumerValidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "u" : {
+          "type" : "string",
+          "description" : "Username"
+        },
+        "imgUrl" : {
+          "type" : "string"
+        }
+      }
+    },
+    "UpdateCellRequest" : {
+      "id" : "UpdateCellRequest",
+      "description" : "",
+      "required" : [ "cell", "code" ],
+      "properties" : {
+        "cell" : {
+          "type" : "string",
+          "description" : "Cell no"
+        },
+        "code" : {
+          "type" : "string",
+          "description" : "code"
+        }
+      }
+    },
+    "City" : {
+      "id" : "City",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "consumerProportion" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "expertsProportion" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      }
+    },
+    "StatusResponse" : {
+      "id" : "StatusResponse",
+      "required" : [ "c" ],
+      "properties" : {
+        "m" : {
+          "$ref" : "JSON Object",
+          "description" : "Message Body, {'c': 0, 'm': {${response}}}"
+        },
+        "c" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Status Code, {'c': 0, 'm': {${response}}}"
+        }
+      }
+    },
+    "ConsumerDetails" : {
+      "id" : "ConsumerDetails",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "consuemrLevels" : {
+          "$ref" : "Levels"
+        },
+        "expertsLevels" : {
+          "$ref" : "Levels"
+        },
+        "consumer" : {
+          "$ref" : "Consumer"
+        },
+        "sink" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "integral" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "consumerTotal" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "consumerNum" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "expertsTotal" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "expertsNum" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "rechargePrice" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "cashPrice" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "consumerInvalidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "consumerValidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "expertsInvalidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "expertsValidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
+    "Pushs" : {
+      "id" : "Pushs",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "content" : {
+          "type" : "string"
+        },
+        "consumer" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Consumer"
+          }
+        },
+        "shortContent" : {
+          "type" : "string"
+        }
+      }
+    },
+    "AuthItem" : {
+      "id" : "AuthItem",
+      "properties" : {
+        "data" : {
+          "type" : "string"
+        },
+        "is_auth" : {
+          "type" : "boolean"
+        }
+      }
+    }
+  }
+}

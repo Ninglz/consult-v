@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>平台管理-新闻管理</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/sys.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<input type="hidden" name="activeMenu" id="activeMenu" value="news" />
+<table cellpadding="0" cellspacing="0" class="warpper">
+   <tr>
+      <td width="199" class="left text_center" valign="top">
+         <a href=""><img src="images/logo_sys.jpg" width="199" /></a>
+         <dl class="nav current">
+            <dt>用户管理<i class="ml20">-</i></dt>
+            <dd><a href="file:///D:/work/wt/sys/index.html?activeMenu=index" class="f14 color_5c">用户列表</a></dd>
+            <dd class=""><a href="file:///D:/work/wt/sys/index.html?activeMenu=consult" class="f14 color_5c">咨询事件记录列表</a></dd>
+         </dl>
+         <dl class="nav">
+            <dt>活动管理<i class="ml20">+</i></dt>
+            <dd><a href="file:///D:/work/wt/sys/activity.html?activeMenu=activity" class="f14 color_5c">活动列表</a></dd>
+            <dd><a href="file:///D:/work/wt/sys/index.html?activeMenu=addActivity" class="f14 color_5c">添加活动</a></dd>
+            <dd><a href="file:///D:/work/wt/sys/index.html" class="f14 color_5c">积分设置</a></dd>
+         </dl>
+         <dl class="nav">
+            <dt>新闻管理<i class="ml20">+</i></dt>
+            <dd><a href="file:///D:/work/wt/sys/news.html?activeMenu=news" class="f14 color_5c">新闻列表</a></dd>
+            <dd><a href="file:///D:/work/wt/sys/addNews.html?activeMenu=addNews" class="f14 color_5c">添加新闻</a></dd>
+         </dl>
+         <dl class="nav">
+            <dt>系统设置<i class="ml20">+</i></dt>
+            <dd><a href="" class="f14 color_5c">行业设置</a></dd>
+            <dd><a href="" class="f14 color_5c">系统配置</a></dd>
+            <dd><a href="" class="f14 color_5c">级别浮动比例(咨询者)</a></dd>
+            <dd><a href="" class="f14 color_5c">行业浮动比例(咨询者)</a></dd>
+            <dd><a href="" class="f14 color_5c">时间段浮动比例(咨询者)</a></dd>
+            <dd><a href="" class="f14 color_5c">专家地区浮动比例(咨询者)</a></dd>
+            <dd><a href="" class="f14 color_5c">级别浮动比例(专家)</a></dd>
+            <dd><a href="" class="f14 color_5c">行业浮动比例(专家)</a></dd>
+            <dd><a href="" class="f14 color_5c">时间段浮动比例(专家)</a></dd>
+            <dd><a href="" class="f14 color_5c">专家地区浮动比例(专家)</a></dd>
+         </dl>
+         <dl class="nav">
+            <dt>APP管理<i class="ml20">+</i></dt>
+            <dd><a href="" class="f14 color_5c">app设置</a></dd>
+         </dl>
+         <dl class="nav">
+            <dt>权限管理<i class="ml20">+</i></dt>
+            <dd><a href="" class="f14 color_5c">帐号列表</a></dd>
+            <dd><a href="" class="f14 color_5c">添加帐号</a></dd>
+         </dl>
+         <dl class="nav">
+            <dt>财务管理<i class="ml20">+</i></dt>
+            <dd><a href="" class="f14 color_5c">充值列表</a></dd>
+            <dd><a href="" class="f14 color_5c">消费列表</a></dd>
+            <dd><a href="" class="f14 color_5c">提现列表</a></dd>
+            <dd><a href="" class="f14 color_5c">系统发送积分列表</a></dd>
+         </dl>
+         <dl class="nav">
+            <dt>表报管理<i class="ml20">+</i></dt>
+            <dd><a href="" class="f14 color_5c">充值报表</a></dd>
+            <dd><a href="" class="f14 color_5c">消费报表</a></dd>
+            <dd><a href="" class="f14 color_5c">提现报表</a></dd>
+         </dl>
+      </td>
+      <td class="right" valign="top">
+         <div class="right_top clearfix">
+            <ul class="right_nav fr">
+               <li class="fl color_ff mr20">XX，欢迎登录问堂后台管理系统</li>
+               <li class="fl"><a href="" class="color_ff">修改密码</a></li>
+               <li class="fl"><a href="" class="color_ff">退出登录</a></li>
+            </ul>
+         </div>
+         <p class="main mt20"><a href="">平台管理</a> > 新闻管理</p>
+         <div class="main mt15 clearfix">
+            <a href="addNews.html" class="work_btn f14 fl">添加新闻</a>
+            <span class="fr f14">
+               <input type="text" class="search_txt f14 ml10" placeholder="请输入关键字" name="keyword" />
+               <a href="" class="search_btn f14 color_ff">搜索</a>
+            </span>
+         </div>
+         <table cellpadding="0" cellspacing="0" class="main mt15 pro_list">
+            <tr>
+               <th>标题</th>
+               <th>类型</th>
+               <th>新闻图</th>
+               <th>摘要</th>
+               <th>编辑时间</th>
+               <th>操作</th>
+            </tr>
+            <tr>
+               <td>这是新闻标题</td>
+               <td>活动</td>
+               <td width="200"><img src="images/pro_img.jpg" width="200" /></td>
+               <td>这是新闻摘要</td>
+               <td width="120">2016-2-29 16:22:22</td>
+               <td width="120" class="text_center">
+                  <a href="javascript:" class="color_00a">编辑</a>
+                  <a href="javascript:" class="color_ee3 ml10">删除</a>
+               </td>
+            </tr>
+            <tr>
+               <td>这是新闻标题</td>
+               <td>公告</td>
+               <td width="200"><img src="images/pro_img.jpg" width="200" /></td>
+               <td>这是新闻摘要</td>
+               <td>2016-2-29 16:22:22</td>
+               <td class="text_center">
+                  <a href="javascript:" class="color_00a">编辑</a>
+                  <a href="javascript:" class="color_ee3 ml10">删除</a>
+               </td>
+            </tr>
+            <tr>
+               <td>这是新闻标题</td>
+               <td>新闻</td>
+               <td width="200"><img src="images/pro_img.jpg" width="200" /></td>
+               <td>这是新闻摘要</td>
+               <td>2016-2-29 16:22:22</td>
+               <td class="text_center">
+                  <a href="javascript:" class="color_00a">编辑</a>
+                  <a href="javascript:" class="color_ee3 ml10">删除</a>
+               </td>
+            </tr>
+            <tr>
+               <td>这是新闻标题</td>
+               <td>活动</td>
+               <td width="200"><img src="images/pro_img.jpg" width="200" /></td>
+               <td>这是新闻摘要</td>
+               <td>2016-2-29 16:22:22</td>
+               <td class="text_center">
+                  <a href="javascript:" class="color_00a">编辑</a>
+                  <a href="javascript:" class="color_ee3 ml10">删除</a>
+               </td>
+            </tr>
+            <tr>
+               <td>这是新闻标题</td>
+               <td>活动</td>
+               <td width="200"><img src="images/pro_img.jpg" width="200" /></td>
+               <td>这是新闻摘要</td>
+               <td>2016-2-29 16:22:22</td>
+               <td class="text_center">
+                  <a href="javascript:" class="color_00a">编辑</a>
+                  <a href="javascript:" class="color_ee3 ml10">删除</a>
+               </td>
+            </tr>
+            <tr>
+               <td>这是新闻标题</td>
+               <td>活动</td>
+               <td width="200"><img src="images/pro_img.jpg" width="200" /></td>
+               <td>这是新闻摘要</td>
+               <td>2016-2-29 16:22:22</td>
+               <td class="text_center">
+                  <a href="javascript:" class="color_00a">编辑</a>
+                  <a href="javascript:" class="color_ee3 ml10">删除</a>
+               </td>
+            </tr>
+            <tr>
+               <td>这是新闻标题</td>
+               <td>活动</td>
+               <td width="200"><img src="images/pro_img.jpg" width="200" /></td>
+               <td>这是新闻摘要</td>
+               <td>2016-2-29 16:22:22</td>
+               <td class="text_center">
+                  <a href="javascript:" class="color_00a">编辑</a>
+                  <a href="javascript:" class="color_ee3 ml10">删除</a>
+               </td>
+            </tr>
+            <tr>
+               <td>这是新闻标题</td>
+               <td>活动</td>
+               <td width="200"><img src="images/pro_img.jpg" width="200" /></td>
+               <td>这是新闻摘要</td>
+               <td>2016-2-29 16:22:22</td>
+               <td class="text_center">
+                  <a href="javascript:" class="color_00a">编辑</a>
+                  <a href="javascript:" class="color_ee3 ml10">删除</a>
+               </td>
+            </tr>
+            <tr>
+               <td>这是新闻标题</td>
+               <td>活动</td>
+               <td width="200"><img src="images/pro_img.jpg" width="200" /></td>
+               <td>这是新闻摘要</td>
+               <td>2016-2-29 16:22:22</td>
+               <td class="text_center">
+                  <a href="javascript:" class="color_00a">编辑</a>
+                  <a href="javascript:" class="color_ee3 ml10">删除</a>
+               </td>
+            </tr>
+            <tr>
+               <td>这是新闻标题</td>
+               <td>活动</td>
+               <td width="200"><img src="images/pro_img.jpg" width="200" /></td>
+               <td>这是新闻摘要</td>
+               <td>2016-2-29 16:22:22</td>
+               <td class="text_center">
+                  <a href="javascript:" class="color_00a">编辑</a>
+                  <a href="javascript:" class="color_ee3 ml10">删除</a>
+               </td>
+            </tr>
+         </table>
+         <!--页码-->
+         <div class="page main" id="pagenum">
+              <a href="" class=""> < </a>
+              <a href="" class="pagenum">1</a>
+              <a href="" class="pagenum current">2</a>
+              <a href="" class="pagenum">3</a>
+              <span class="numoff">...</span>
+              <a href="" class="pagenum">10</a>
+              <a href="" class=""> > </a>
+              <span class="ml10">第<i id="currentpage" class="color_00a">6</i>/<i id="totalpage" class="color_00a">99</i>页</span>
+              <span class="ml10">共 <i id="totalobj" class="color_00a">752</i> 条</span>
+        </div>
+        <div class="footer text_center">&copy;copyright 2015 问堂有限公司  版权所有</div>
+      </td>
+   </tr>
+</table>
+<script src="js/common/js/jquery-1.7.1.min.js"></script>
+<script src="js/common/js/jquery.longyuJs.js"></script>
+<script src="js/common/js/jquery.dialog.js"></script>
+<script src="js/nav.js"></script>
+<script>
+   $(function(){
+	   var cw=$(window).height();
+	   $(".warpper").css("min-height",cw-2);
+   });
+</script>
+</body>
+</html>

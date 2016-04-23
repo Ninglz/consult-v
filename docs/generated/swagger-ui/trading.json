@@ -1,0 +1,742 @@
+{
+  "apiVersion" : "1.0",
+  "swaggerVersion" : "1.2",
+  "basePath" : "http://192.168.168.88:8080/api",
+  "resourcePath" : "/trading",
+  "apis" : [ {
+    "path" : "/trading/recharge",
+    "operations" : [ {
+      "method" : "POST",
+      "summary" : "Consumer Recharge",
+      "notes" : "",
+      "type" : "array",
+      "items" : {
+        "$ref" : "Experts"
+      },
+      "nickname" : "recharge",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      }, {
+        "name" : "body",
+        "required" : true,
+        "type" : "RechargeRequest",
+        "paramType" : "body",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40009,
+        "message" : "Token Invalid",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/trading/recharge/detail",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "Trading Racharge Detail",
+      "notes" : "",
+      "type" : "StatusResponse",
+      "nickname" : "rechargeDetail",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      }, {
+        "name" : "page",
+        "required" : true,
+        "type" : "integer",
+        "format" : "int32",
+        "paramType" : "query",
+        "allowMultiple" : false
+      }, {
+        "name" : "size",
+        "required" : true,
+        "type" : "integer",
+        "format" : "int32",
+        "paramType" : "query",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40009,
+        "message" : "Token Invalid",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/trading/judge/aliapy",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "Experts Judge AliapyUserName",
+      "notes" : "",
+      "type" : "array",
+      "items" : {
+        "$ref" : "Experts"
+      },
+      "nickname" : "judgeAliapy",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40009,
+        "message" : "Token Invalid",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/trading/withdraw",
+    "operations" : [ {
+      "method" : "POST",
+      "summary" : "Experts Withdraw",
+      "notes" : "",
+      "type" : "array",
+      "items" : {
+        "$ref" : "Experts"
+      },
+      "nickname" : "withdraw",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      }, {
+        "name" : "body",
+        "required" : true,
+        "type" : "WithdrawRequest",
+        "paramType" : "body",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40009,
+        "message" : "Token Invalid",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/trading/withdraw/detail",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "Trading withdraw Detail",
+      "notes" : "",
+      "type" : "StatusResponse",
+      "nickname" : "withdrawDetail",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      }, {
+        "name" : "page",
+        "required" : true,
+        "type" : "integer",
+        "format" : "int32",
+        "paramType" : "query",
+        "allowMultiple" : false
+      }, {
+        "name" : "size",
+        "required" : true,
+        "type" : "integer",
+        "format" : "int32",
+        "paramType" : "query",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40009,
+        "message" : "Token Invalid",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  } ],
+  "models" : {
+    "Authentication" : {
+      "id" : "Authentication",
+      "properties" : {
+        "email" : {
+          "$ref" : "AuthItem"
+        },
+        "real_name" : {
+          "$ref" : "AuthItem"
+        },
+        "nick_name" : {
+          "$ref" : "AuthItem"
+        },
+        "id_card" : {
+          "$ref" : "AuthItem"
+        },
+        "cell" : {
+          "$ref" : "AuthItem"
+        }
+      }
+    },
+    "Levels" : {
+      "id" : "Levels",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "levels" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "consumerProportion" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "expertsProportion" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      }
+    },
+    "Consumer" : {
+      "id" : "Consumer",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "weight" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "sex" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "height" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "age" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "times" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "address" : {
+          "type" : "string"
+        },
+        "clientNum" : {
+          "type" : "string"
+        },
+        "clientPwd" : {
+          "type" : "string"
+        },
+        "city" : {
+          "$ref" : "City"
+        },
+        "authentication" : {
+          "$ref" : "Authentication"
+        },
+        "consumerDetails" : {
+          "$ref" : "ConsumerDetails"
+        },
+        "pushs" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Pushs"
+          }
+        },
+        "avatar" : {
+          "type" : "string"
+        },
+        "realName" : {
+          "type" : "string"
+        },
+        "nickName" : {
+          "type" : "string"
+        },
+        "idCard" : {
+          "type" : "string"
+        },
+        "experLevel" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "appType" : {
+          "$ref" : "AppType",
+          "enum" : [ "ANDROID", "IOS", "PC" ]
+        },
+        "integral" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "consumerLevel" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sink" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "appToken" : {
+          "type" : "string"
+        },
+        "cellNo" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "expertsValidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "consumerInvalidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "expertsInvalidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "consumerValidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "u" : {
+          "type" : "string",
+          "description" : "Username"
+        },
+        "imgUrl" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Industry" : {
+      "id" : "Industry",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "consumer_proportion" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "experts_proportion" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      }
+    },
+    "Img" : {
+      "id" : "Img",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "path" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ExpertsRecord" : {
+      "id" : "ExpertsRecord",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "state" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "price" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "seniorityStart" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "seniorityEnd" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "goodAt" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "industry" : {
+          "$ref" : "Industry"
+        },
+        "img" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Img"
+          }
+        },
+        "auditState" : {
+          "type" : "boolean"
+        },
+        "reason" : {
+          "type" : "string"
+        },
+        "expertsAvatar" : {
+          "type" : "string"
+        },
+        "expertsSex" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "expertsRealName" : {
+          "type" : "string"
+        },
+        "experts" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Experts"
+          }
+        }
+      }
+    },
+    "WithdrawRequest" : {
+      "id" : "WithdrawRequest",
+      "description" : "",
+      "required" : [ "sink" ],
+      "properties" : {
+        "sink" : {
+          "type" : "number",
+          "format" : "double",
+          "description" : "sink"
+        }
+      }
+    },
+    "City" : {
+      "id" : "City",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "consumerProportion" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "expertsProportion" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      }
+    },
+    "StatusResponse" : {
+      "id" : "StatusResponse",
+      "required" : [ "c" ],
+      "properties" : {
+        "m" : {
+          "$ref" : "JSON Object",
+          "description" : "Message Body, {'c': 0, 'm': {${response}}}"
+        },
+        "c" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Status Code, {'c': 0, 'm': {${response}}}"
+        }
+      }
+    },
+    "RechargeRequest" : {
+      "id" : "RechargeRequest",
+      "description" : "",
+      "required" : [ "money" ],
+      "properties" : {
+        "money" : {
+          "type" : "number",
+          "format" : "double",
+          "description" : "money"
+        }
+      }
+    },
+    "ConsumerDetails" : {
+      "id" : "ConsumerDetails",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "consuemrLevels" : {
+          "$ref" : "Levels"
+        },
+        "expertsLevels" : {
+          "$ref" : "Levels"
+        },
+        "consumer" : {
+          "$ref" : "Consumer"
+        },
+        "sink" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "integral" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "consumerTotal" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "consumerNum" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "expertsTotal" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "expertsNum" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "rechargePrice" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "cashPrice" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "consumerInvalidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "consumerValidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "expertsInvalidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "expertsValidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
+    "Pushs" : {
+      "id" : "Pushs",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "content" : {
+          "type" : "string"
+        },
+        "consumer" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Consumer"
+          }
+        },
+        "shortContent" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Experts" : {
+      "id" : "Experts",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Entity Identity"
+        },
+        "state" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "focusNo" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "top" : {
+          "type" : "boolean"
+        },
+        "topTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "handle" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "lastActive" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "alipayUserName" : {
+          "type" : "string"
+        },
+        "expertsRecord" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "ExpertsRecord"
+          }
+        },
+        "address" : {
+          "type" : "string"
+        },
+        "realName" : {
+          "type" : "string"
+        },
+        "authentication" : {
+          "$ref" : "Authentication"
+        },
+        "weight" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "nickName" : {
+          "type" : "string"
+        },
+        "idCard" : {
+          "type" : "string"
+        },
+        "experLevel" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "pushs" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Pushs"
+          }
+        },
+        "appType" : {
+          "$ref" : "AppType",
+          "enum" : [ "ANDROID", "IOS", "PC" ]
+        },
+        "integral" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "avatar" : {
+          "type" : "string"
+        },
+        "clientNum" : {
+          "type" : "string"
+        },
+        "city" : {
+          "$ref" : "City"
+        },
+        "sex" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "clientPwd" : {
+          "type" : "string"
+        },
+        "times" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "consumerLevel" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "height" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "age" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sink" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "appToken" : {
+          "type" : "string"
+        },
+        "cellNo" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "expertsValidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "consumerInvalidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "expertsInvalidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "consumerDetails" : {
+          "$ref" : "ConsumerDetails"
+        },
+        "consumerValidTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "u" : {
+          "type" : "string",
+          "description" : "Username"
+        },
+        "imgUrl" : {
+          "type" : "string"
+        }
+      }
+    },
+    "AuthItem" : {
+      "id" : "AuthItem",
+      "properties" : {
+        "data" : {
+          "type" : "string"
+        },
+        "is_auth" : {
+          "type" : "boolean"
+        }
+      }
+    }
+  }
+}

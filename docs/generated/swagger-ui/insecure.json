@@ -1,0 +1,407 @@
+{
+  "apiVersion" : "1.0",
+  "swaggerVersion" : "1.2",
+  "basePath" : "http://192.168.168.88:8080/api",
+  "resourcePath" : "/insecure",
+  "apis" : [ {
+    "path" : "/insecure/verify_code",
+    "operations" : [ {
+      "method" : "POST",
+      "summary" : "Get Verification Code",
+      "notes" : "",
+      "type" : "StatusResponse",
+      "nickname" : "getCode",
+      "parameters" : [ {
+        "name" : "body",
+        "required" : true,
+        "type" : "VerifyCodeRequest",
+        "paramType" : "body",
+        "allowMultiple" : false
+      }, {
+        "name" : "body",
+        "required" : false,
+        "type" : "Locale",
+        "paramType" : "body",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40012,
+        "message" : "Illegal parameter",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10007,
+        "message" : "Cell no invalid",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10012,
+        "message" : "Register: cell duplicate",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10013,
+        "message" : "FindPwd: cell no such",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10014,
+        "message" : "Modify: cell no such",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10003,
+        "message" : "sms code send failed",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 65520,
+        "message" : "Request Entity Blank",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 65535,
+        "message" : "Unknown Error",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/insecure/signin",
+    "operations" : [ {
+      "method" : "POST",
+      "summary" : "User Sign In",
+      "notes" : "",
+      "type" : "SessionToken",
+      "nickname" : "signin",
+      "parameters" : [ {
+        "name" : "body",
+        "required" : true,
+        "type" : "SigninRequest",
+        "paramType" : "body",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 65520,
+        "message" : "Request Entity Blank",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10007,
+        "message" : "Cell no invalid",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10001,
+        "message" : "Bad Credential",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 65521,
+        "message" : "Customer locked",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 65535,
+        "message" : "Unknown Error",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/insecure/signout",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "User Sign Out",
+      "notes" : "",
+      "type" : "BooleanEntity",
+      "nickname" : "signOut",
+      "parameters" : [ {
+        "name" : "Session-Token",
+        "required" : true,
+        "type" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40008,
+        "message" : "Token Required",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 40009,
+        "message" : "Token Invalid",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/insecure/register",
+    "operations" : [ {
+      "method" : "POST",
+      "summary" : "User Registration",
+      "notes" : "",
+      "type" : "SessionToken",
+      "nickname" : "register",
+      "parameters" : [ {
+        "name" : "body",
+        "required" : true,
+        "type" : "UserRegistration",
+        "paramType" : "body",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40002,
+        "message" : "Code expire",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 40001,
+        "message" : "Code Required",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 40003,
+        "message" : "Code Invalid",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 40012,
+        "message" : "Illegal parameter",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10007,
+        "message" : "Cell no invalid",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10012,
+        "message" : "Cell no duplicate",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10006,
+        "message" : "Cell no empty",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10009,
+        "message" : "Password invalid",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 65520,
+        "message" : "Request Entity Blank",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 65535,
+        "message" : "Unknown Error",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 40015,
+        "message" : "Password Difference",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  }, {
+    "path" : "/insecure/find_pwd",
+    "operations" : [ {
+      "method" : "POST",
+      "summary" : "Find Password",
+      "notes" : "",
+      "type" : "BooleanEntity",
+      "nickname" : "findPassword",
+      "parameters" : [ {
+        "name" : "body",
+        "required" : true,
+        "type" : "FindPasswordRequest",
+        "paramType" : "body",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 40001,
+        "message" : "Ticket Required",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 40003,
+        "message" : "Ticket Invalid",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 40002,
+        "message" : "Ticket Invalid",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 10013,
+        "message" : "Find password cellNo no such",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 65520,
+        "message" : "Request Entity Blank",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 65535,
+        "message" : "Unknown Error",
+        "responseModel" : "StatusResponse"
+      }, {
+        "code" : 40015,
+        "message" : "Password Difference",
+        "responseModel" : "StatusResponse"
+      } ]
+    } ]
+  } ],
+  "models" : {
+    "BooleanEntity" : {
+      "id" : "BooleanEntity",
+      "properties" : {
+        "v" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "SigninRequest" : {
+      "id" : "SigninRequest",
+      "description" : "",
+      "required" : [ "cell", "password" ],
+      "properties" : {
+        "cell" : {
+          "type" : "string",
+          "description" : "Cell no"
+        },
+        "password" : {
+          "type" : "string",
+          "description" : "Password"
+        }
+      }
+    },
+    "VerifyCodeRequest" : {
+      "id" : "VerifyCodeRequest",
+      "description" : "",
+      "required" : [ "cell", "type" ],
+      "properties" : {
+        "cell" : {
+          "type" : "string",
+          "description" : "Cell no"
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Code type {register, restPwd, modify}"
+        }
+      }
+    },
+    "SessionToken" : {
+      "id" : "SessionToken",
+      "required" : [ "t" ],
+      "properties" : {
+        "t" : {
+          "type" : "string",
+          "description" : "Token"
+        },
+        "num" : {
+          "type" : "string"
+        },
+        "pwd" : {
+          "type" : "string"
+        }
+      }
+    },
+    "UserRegistration" : {
+      "id" : "UserRegistration",
+      "description" : "",
+      "required" : [ "cell", "password", "confirmPassword", "type", "appToken" ],
+      "properties" : {
+        "cell" : {
+          "type" : "string",
+          "description" : "Cell no"
+        },
+        "password" : {
+          "type" : "string",
+          "description" : "Password"
+        },
+        "confirmPassword" : {
+          "type" : "string",
+          "description" : "ConfirmPassword"
+        },
+        "type" : {
+          "$ref" : "AppType",
+          "description" : "Type",
+          "enum" : [ "ANDROID", "IOS", "PC" ]
+        },
+        "appToken" : {
+          "type" : "string",
+          "description" : "AppToken"
+        }
+      }
+    },
+    "StatusResponse" : {
+      "id" : "StatusResponse",
+      "required" : [ "c" ],
+      "properties" : {
+        "m" : {
+          "$ref" : "JSON Object",
+          "description" : "Message Body, {'c': 0, 'm': {${response}}}"
+        },
+        "c" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Status Code, {'c': 0, 'm': {${response}}}"
+        }
+      }
+    },
+    "Locale" : {
+      "id" : "Locale",
+      "properties" : {
+        "language" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "displayCountry" : {
+          "type" : "string"
+        },
+        "displayLanguage" : {
+          "type" : "string"
+        },
+        "displayName" : {
+          "type" : "string"
+        },
+        "displayScript" : {
+          "type" : "string"
+        },
+        "displayVariant" : {
+          "type" : "string"
+        },
+        "extensionKeys" : {
+          "type" : "array",
+          "uniqueItems" : true,
+          "items" : {
+            "$ref" : "Character"
+          }
+        },
+        "iSO3Country" : {
+          "type" : "string"
+        },
+        "iSO3Language" : {
+          "type" : "string"
+        },
+        "script" : {
+          "type" : "string"
+        },
+        "unicodeLocaleAttributes" : {
+          "type" : "array",
+          "uniqueItems" : true,
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "unicodeLocaleKeys" : {
+          "type" : "array",
+          "uniqueItems" : true,
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "variant" : {
+          "type" : "string"
+        }
+      }
+    },
+    "FindPasswordRequest" : {
+      "id" : "FindPasswordRequest",
+      "description" : "",
+      "required" : [ "code", "cell", "password" ],
+      "properties" : {
+        "code" : {
+          "type" : "string",
+          "description" : "Code"
+        },
+        "cell" : {
+          "type" : "string",
+          "description" : "Cell No"
+        },
+        "password" : {
+          "type" : "string",
+          "description" : "Password"
+        }
+      }
+    }
+  }
+}
